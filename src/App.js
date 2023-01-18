@@ -1,10 +1,21 @@
-import "./app.scss"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import {Header, Footer} from "./components"
+
+import {Home, Contact} from "./pages"
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to simee's treat</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 }
 
